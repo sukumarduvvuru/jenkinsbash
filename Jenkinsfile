@@ -25,13 +25,6 @@ pipeline {
 
         }
 
-    post{
-        always {
-
-            echo "this is post stage"
-        }
-    }
-
     }
 
 
