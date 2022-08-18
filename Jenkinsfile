@@ -1,46 +1,36 @@
 pipeline {
-
     agent any
     environment {
-
-        VERSIONNUMBER = "1.0"
+        VERSIONNUMBER = '1.0'
     }
     stages {
-        stage("build") {
+        stage('build') {
             when {
                     expression {
-
-                        BRANCH_NAME == "main"
-
+                        BRANCH_NAME == 'main'
                     }
-
-                }
+            }
             steps {
                 echo "hello build stage - with version  ${VERSIONNUMBER}"
-
-                
             }
-
         }
-        stage("test") {
+        stage('test') {
             steps {
-                echo "hello test stage"
-
+                echo 'hello test stage'
             }
-
         }
 
-        stage("deploy") {
+        stage('deploy') {
             steps {
-                echo "hello deploy stage"
-
+                echo 'hello deploy stage'
             }
-
         }
-            
-        
-        }
-
     }
-
-
+    post {
+        steps {
+            success {
+                echo 'success'
+            }
+        }
+    }
+}
