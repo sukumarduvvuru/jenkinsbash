@@ -6,6 +6,15 @@ pipeline {
             steps {
                 echo "hello build stage"
 
+                when {
+                    expression {
+
+                        BUILD_NAME == "main"
+                        echo "this is main branch"
+
+                    }
+
+                }
             }
 
         }
@@ -24,14 +33,8 @@ pipeline {
             }
 
         }
-        post {
-            success
-
-            {
-                echo "successful... "
-
-            }
-        }
+            
+        
         }
 
     }
