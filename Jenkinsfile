@@ -1,6 +1,10 @@
 pipeline {
 
     agent any
+    environment {
+
+        VERSIONNUMBER = "1.0"
+    }
     stages {
         stage("build") {
             when {
@@ -12,7 +16,7 @@ pipeline {
 
                 }
             steps {
-                echo "hello build stage"
+                echo "hello build stage - with version  ${VERSIONNUMBER}"
 
                 
             }
