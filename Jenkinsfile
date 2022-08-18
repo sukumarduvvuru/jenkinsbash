@@ -3,18 +3,18 @@ pipeline {
     agent any
     stages {
         stage("build") {
-            steps {
-                echo "hello build stage"
-
-                when {
+            when {
                     expression {
 
                         BUILD_NAME == "main"
-                        echo "this is main branch"
 
                     }
 
                 }
+            steps {
+                echo "hello build stage"
+
+                
             }
 
         }
