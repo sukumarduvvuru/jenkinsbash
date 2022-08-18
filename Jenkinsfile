@@ -27,10 +27,8 @@ pipeline {
         }
     }
     post {
-        steps {
             success {
                 echo 'success'
-            }
         }
     }
 }
