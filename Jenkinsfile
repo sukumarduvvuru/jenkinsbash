@@ -6,7 +6,7 @@ pipeline {
             when {
                     expression {
 
-                        BUILD_NAME == "main"
+                        BRANCH_NAME == "main"
 
                     }
 
