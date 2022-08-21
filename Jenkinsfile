@@ -5,11 +5,6 @@ pipeline {
     }
     stages {
         stage('build') {
-            when {
-                    expression {
-                        BRANCH_NAME == 'main'
-                    }
-            }
             steps {
                 echo "hello build stage - with version  ${VERSIONNUMBER}"
             }
