@@ -16,6 +16,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'hello deploy'
+                echo "added webhook"
             }
         }
     }
