@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-
         stage('test') {
             environment {
-                sonar = credentials('mysonarapplication')
+                sonar =  'hello world'
             }
             steps {
                 echo 'hello test stage'
