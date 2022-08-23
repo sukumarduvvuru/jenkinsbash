@@ -5,6 +5,7 @@ pipeline {
         mysonar = credentials('mysonarapplication')
     }
 
+    stages {
         stage('test') {
             steps {
                 echo 'hello test stage'
@@ -17,5 +18,5 @@ pipeline {
                 echo "mysonar access is: ${mysonar}"
             }
         }
+    }
 }
-
