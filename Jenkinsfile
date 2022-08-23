@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('test') {
             environment {
-                sonar =  'hello world'
+                sonar = credentials('mysonarid') 
             }
             steps {
                 echo 'hello test stage'
