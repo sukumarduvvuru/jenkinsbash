@@ -1,19 +1,18 @@
 pipeline {
     agent any
+
     environment {
-        VERSIONNUMBER = '1.0'
+        mysonarcred = credentials('mysonarapplication')
     }
+
     stages {
         stage('build') {
-            when {
-                    expression {
-                        BRANCH_NAME == 'main'
-                    }
-            }
             steps {
-                echo "hello build stage - with version  ${VERSIONNUMBER}"
+                echo 'hello world build stage'
+                sh "my sonar cred is: ${mysonarcred}"
             }
         }
+
         stage('test') {
             steps {
                 echo 'hello test stage'
@@ -22,13 +21,8 @@ pipeline {
 
         stage('deploy') {
             steps {
-                echo 'hello deploy stage'
+                echo 'hello deploy'
             }
         }
-    }
-    post {
-            success {
-                echo 'success'
-            }
     }
 }
