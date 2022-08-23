@@ -14,7 +14,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'hello deploy'
-                echo "mysonar access is: ${mysonarapplication}"
+                echo "mysonar access is: ${mysonar}"
             }
         }
 }
