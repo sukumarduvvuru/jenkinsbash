@@ -1,12 +1,9 @@
 pipeline {
     agent any
 
-    stages {
-        stage('build') {
-            steps {
-                echo 'hello world build stage'
-            }
-        }
+    environment {
+        mysonar = credentials('mysonarapplication')
+    }
 
         stage('test') {
             steps {
@@ -17,7 +14,8 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'hello deploy'
+                echo "mysonar access is: ${mysonarapplication}"
             }
         }
-    }
 }
+
