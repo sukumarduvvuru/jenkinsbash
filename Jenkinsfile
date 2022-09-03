@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('test') {
+        stage('testing') {
             steps {
                 echo 'hello test stage - test'
                 echo 'added webhook in configure section'
